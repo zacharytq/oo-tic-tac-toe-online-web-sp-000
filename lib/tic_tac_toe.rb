@@ -21,4 +21,22 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
+  def input_to_index(user_input)
+  user_input.to_i - 1
+end
+
+def move(board, index, current_player)
+  board[index] = current_player
+end
+
+def position_taken?(board, location)
+  board[location] != " " && board[location] != ""
+end
+
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
+end
+
+  
 end
