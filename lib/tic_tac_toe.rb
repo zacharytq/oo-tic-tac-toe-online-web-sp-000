@@ -24,19 +24,19 @@ class TicTacToe
 
   def input_to_index(user_input)
   user_input.to_i - 1
-end
+  end
 
-def move(board, index, current_player)
-  board[index] = current_player
-end
+  def move(board, index, current_player)
+    board[index] = current_player
+  end
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
+  def position_taken?(board, location)
+    board[location] != " " && board[location] != ""
+  end
 
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
-end
+  def valid_move?(board, index)
+    index.between?(0,8) && !position_taken?(board, index)
+  end
 
 
 end
