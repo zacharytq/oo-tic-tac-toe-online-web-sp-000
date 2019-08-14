@@ -56,6 +56,16 @@ class TicTacToe
     end
   end
 
+  def won?
+    WIN_COMBINATIONS.detect do |win_combo|
+      temp_array = []
+      win_combo.each do |index|
+        temp_array << @board[index]
+      end
+      temp_array == ["O", "O", "O"] || temp_array == ["X", "X", "X"]
+    end
+  end
+
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
