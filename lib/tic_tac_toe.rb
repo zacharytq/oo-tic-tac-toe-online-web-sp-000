@@ -61,13 +61,13 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      move(index, current_player(board))
+      move(index, current_player)
       display_board
     else
-      turn(@board)
+      turn
     end
     if won?
-      puts "Congratulations #{winner(@board)}"
+      puts "Congratulations #{winner}"
     elsif draw?
       puts "Cat's game!"
     end
